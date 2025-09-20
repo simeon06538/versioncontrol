@@ -4,6 +4,6 @@ try:
   while True:
     barcode = input("Scan a barcode: ")
     if barcode:
-      print("Scannerd barcode: " + barcode)
+      print("Scanned barcode: " + barcode)
 except KeyboardInterrupt:
   print("Stopped scanning ")
