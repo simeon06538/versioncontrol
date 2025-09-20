@@ -1,13 +1,9 @@
-import serial
+print("Ready to scan barcodes. Press CTRL+C to stop")
 
-ser = serial.Serial('COM3', 9600, timeout = 1)
-
-print("scan barcode. press Ctrl+C to exit.")
 try:
   while True:
-    barcode = ser.readline().decode('utf-8').strip()
+    barcode = input("Scan a barcode: ")
     if barcode:
-      print("Scanned barcode")
+      print("Scannerd barcode: " + barcode)
 except KeyboardInterrupt:
-  print("Do not touch keyboard")
-  ser.close()
+  print("Stopped scanning ")
