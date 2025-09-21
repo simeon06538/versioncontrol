@@ -3,4 +3,19 @@ Some difficulty understanding how to read input from the barcode scanner, should
 
 the concept is overall very easy to understand, handshake between the barcode, comparing the info you get from the barcode with the order info, then pulling up said order on the printer.
 
-ts frying me bruh 
+ts frying me bruh
+
+9/21/2025
+Step	Action
+1	InkyBay exports file with customization ID 12345 into Hot Folder
+2	Python watchdog detects new file
+3	Script reads ID 12345
+4	Script looks up C:\images\shirt12345.png in CSV mapping
+5	Script loads label template in Brother SDK (b-PAC)
+6	Script inserts image and prints automatically
+
+✅ So in short:
+
+InkyBay ID → Python script → Image path → Brother SDK
+
+The SDK never sees the InkyBay ID directly; your script translates it into a file/image it can print.
